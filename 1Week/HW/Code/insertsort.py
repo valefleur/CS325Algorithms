@@ -22,11 +22,11 @@ class insertSorter:
 
 def main():
     parser = argparse.ArgumentParser(description="Use insertSort to sort lines of integers in a file. Results will be stored in insert.out.")
-    parser.add_argument(default="data.txt", nargs="?", dest='path', action='store', help="The file with lines of integers to sort. Will default to data.txt if not provided.")
+    parser.add_argument(default="data.txt", nargs="?", dest='datafile', action='store', help="A path to the file with lines of integers to sort. Will default to data.txt if not provided.")
     #use nargs="?" to indicate it is optional; without nargs, arg is required
     args = parser.parse_args(sys.argv[1:])
-    print("Data file is: " + args.path)
-    path = args.path
+    path = args.datafile
+    print("Data file is: " + path)
     if(os.path.exists(path)):
         with open(path, "r") as file1, open("insert.out", "w") as file2:
             k = 0
