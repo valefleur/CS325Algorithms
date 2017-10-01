@@ -25,18 +25,10 @@ def main():
     parser.add_argument(default="data.txt", nargs="?", dest='path', action='store', help="The file with lines of integers to sort. Will default to data.txt if not provided.")
     #use nargs="?" to indicate it is optional; without nargs, arg is required
     args = parser.parse_args(sys.argv[1:])
-    print("args.path is: " + args.path)
-
-
+    print("Data file is: " + args.path)
     path = args.path
-    #print(len(sys.argv))
-    #if(sys.argv[1] in ["h", "help", "-h", "--help"]):
-    #    print("""Usage: python insertSort.py [dataFile]
-    #    If dataFile is not provided, it will assume data.txt in the same directory.""")
-    #else:
-    #    path = sys.argv[1]
     if(os.path.exists(path)):
-        with open(path, "r") as file1:
+        with open(path, "r") as file1, open("insert.out", "w") as file2:
             k = 0
             for line in file1:
                 #DEBUG
@@ -53,19 +45,17 @@ def main():
                 #print("***Unsorted data is: ")
                 #print(data)
                 #DEBUG
-            
                 if (givenLength == actLength):
                     iSorter = insertSorter()    #create an instance of the object
                     iSorter.sort(data)          #do stuff with that object
-                    with open("insert.out", "a") as file2:
-                        if(file2.tell() > 0):   #if prev written, add a new line
-                            file2.write("\n")
-                        for i in range(len(data)):
-                            file2.write(str(data[i]) + " ")
-                    file2.close()
+                    if(file2.tell() > 0):   #if prev written, add a new line
+                        file2.write("\n")
+                    for i in range(len(data)):
+                        file2.write(str(data[i]) + " ")
                 else:
                     print("***Error with input data.  Please fix and try again.\nError on line:\n")
                     print(line)
+        file2.close()
         file1.close()
     else:
         print("Please put data.txt in this directory and try again!")
