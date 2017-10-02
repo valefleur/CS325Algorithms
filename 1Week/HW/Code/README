@@ -23,6 +23,25 @@ insertSort.py assumes many things:
 
 
 
+
+Insert Sort Timed Best/Worst
+python insertsortTimedBW.py -h
+usage: insertsortTimedBW.py [-h] [-b [BEST]] [-w [WORST]]
+
+insertsortTimed will create an array of random integers, time how long it
+takes to sort that array and will then print the time out to a file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b [BEST], --best [BEST]
+                        Generate and run the BEST case scenario.
+  -w [WORST], --worst [WORST]
+                        Generate and run the WORST case scenario.
+
+
+
+
+
 Merge Sort
 usage: mergeSort.py [-h] [path]
 
@@ -47,3 +66,17 @@ mergeSort.py assumes many things:
         line, otherwise it will print a message to the user and exit.
 
 
+
+Merge Sort Timed Best/Worst
+python mergesortTimedBW.py -h
+usage: mergesortTimedBW.py [-h] [-b [BEST]] [-w [WORST]]
+
+mergesortTimed will create an array of random integers, time how long it takes
+to sort that array and will then print the time out to a file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b [BEST], --best [BEST]
+                        Generate and run the BEST case scenario.
+  -w [WORST], --worst [WORST]
+                        Generate and run the WORST case scenario.
