@@ -22,34 +22,32 @@ class insertSorter:
         #DEBUG
 
 def main(sizes):
-    parser = argparse.ArgumentParser(description="insertsortTimed will create an array of random integers, time how long it takes to sort that array and will then print the time out to a file.")
     #parser.add_argument(default="data.txt", nargs="?", dest='datafile', action='store', help="A path to the file with lines of integers to sort. Will default to data.txt if not provided.")
     data = []
-    for i in range(len(sizes)):
-        n = sizes[i]
-        #create n-sized arrays of random integers
-        for j in range(n):
-            data.append(randint(1, 10000))
+    with open("insertTimed.out", "a") as dataOut:        
+        for i in range(len(sizes)):
+            n = sizes[i]
+            #create n-sized arrays of random integers
+            for j in range(n):
+                data.append(random.randint(1, 10000))
+            random.shuffle(data)   # for good measure
 
-        shuffle(data)   # for good measure
+            iSorter = insertSorter()    #create an instance of the object
 
-        iSorter = insertSorter()    #create an instance of the object
+            #sort those integers
+            start = timer()
+            iSorter.sort(data)          #do stuff with that object
+            end = timer()
+            totalTime = end - start
 
-        #sort those integers
-        start = timer()
-        iSorter.sort(data)          #do stuff with that object
-        end = timer()
-        totalTime = end - start
-
-        #record n and the amount of time it took to sort
-        with open("insertTimed.out", "a") as dataOut:
+            #record n and the amount of time it took to sort
             dataOut.write(str(n) + ", " + str(totalTime) + "\n")
 
-        dataOut.close()
+    dataOut.close()
 
 
 
 
 
 if __name__ == '__main__':
-    main([1000, 2000, 5000, 10000])
+    main([1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000, 30000, 50000, 100000])

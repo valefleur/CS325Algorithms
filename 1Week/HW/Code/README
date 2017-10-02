@@ -21,4 +21,29 @@ insertSort.py assumes many things:
     - The first integer on each line is the quantity of remaining integers on that
         line, otherwise it will print a message to the user and exit.
 
+
+
 Merge Sort
+usage: mergeSort.py [-h] [path]
+
+Use mergeSort to sort lines of integers in a file.  Results will be stored in
+merge.out.
+
+positional arguments:
+  path        The file with lines of integers to sort. Will default to
+              data.txt if not provided.
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+
+mergeSort.py assumes many things:
+    - The data file is specified on the command line when the program is called.  
+        Otherwise it will default to "data.txt".
+    - The data file is in the same directory as mergeSort.py, otherwise it will 
+        print a message to the user and exit.
+    - Each line of data the data file contains a string of integers.
+    - The first integer on each line is the quantity of remaining integers on that
+        line, otherwise it will print a message to the user and exit.
+
+
