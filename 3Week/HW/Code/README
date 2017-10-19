@@ -1,0 +1,18 @@
+python makeChange.py -h
+usage: makeChange.py [-h] [datafile]
+
+Use makeChange to identify the smallest number of coins needed to make change
+for a given change. Results will be stored in change.txt.
+
+positional arguments:
+  datafile    A path to the file containing coin values and an change on
+              alternating lines. Will default to change.txt if not provided.
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+makeChange.py assumes many things:
+    - The data file is named amount.txt and is in the same directory.
+    - The data file contains alternating lines where odd lines contain a
+        list of coin values and even lines contain a single value for which
+        to make change
