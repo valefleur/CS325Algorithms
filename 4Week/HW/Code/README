@@ -1,0 +1,3 @@
+activitySelection.py assumes many things:
+    - An empty line signifies the end of data.
+
