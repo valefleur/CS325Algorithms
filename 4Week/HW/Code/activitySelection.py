@@ -24,22 +24,6 @@ class activitySelector:
                 current = prev
         return optimalSchedule
 
-    #Data must be sorted by increasing finish time.
-    def firstToFinish(self, sTime, fTime):
-        n = len(sTime)
-        optimalSchedule = [sTime[0]] 
-        current = 1
-        for nxt in range(2, n):
-            if sTime[nxt] >= fTime[current]:
-                optimalSchedule.append(act[nxt])
-                current = nxt
-        return act
-
-class printer:
-    def record(self, jobset, schedule):
-        return
-        
-
 class mergeSorter:
 #Thanks to https://gist.github.com/jvashishtha/2720700
     def merge(self, l, r):
@@ -75,8 +59,8 @@ class mergeSorter:
         return self.merge(left, right)
 
 def main():
-    parser = argparse.ArgumentParser(description="Use activitySelection")
-    parser.add_argument(default="act.txt", nargs="?", dest="datafile", action="store", help="A path to the file containing ***.  Will default to act.txt if not provided.")
+    parser = argparse.ArgumentParser(description="Use activitySelection to find the maximum number of non-competing activities that can be scheduled.")
+    parser.add_argument(default="act.txt", nargs="?", dest="datafile", action="store", help="A path to the file containing the input data.  Will default to act.txt if not provided.")
     args = parser.parse_args(sys.argv[1:])
     path = args.datafile
     print("Input file is: " + path)

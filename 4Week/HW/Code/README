@@ -1,3 +1,22 @@
+Activity Selection
+python activitySelection.py -h
+usage: activitySelection.py [-h] [datafile]
+
+Use activitySelection to find the maximum number of non-competing activities
+that can be scheduled.
+
+positional arguments:
+  datafile    A path to the file containing the input data. Will default to
+              act.txt if not provided.
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+
 activitySelection.py assumes many things:
     - An empty line signifies the end of data.
-
+    - The first line gives the quantity of activities in the first problem set,
+        followed by one line per activity containing the name, start time and 
+        finish time of each problem in the set.  The quantity of activities in
+        subsequent sets starts on the line directly after the last activity in 
+        the previous set.
