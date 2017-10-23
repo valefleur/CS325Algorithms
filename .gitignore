@@ -6,9 +6,14 @@
 
 # Copyright
 Textbook/
+*Week/Lectures/
+*Week/OptionalReadings/
 
 # SWP Files
 *.swp
 *.swo
 *.tmp
 
+#Misc
+.DS_Store
+~$*.xlsx

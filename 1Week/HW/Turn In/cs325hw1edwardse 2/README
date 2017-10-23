@@ -1,0 +1,82 @@
+Insert Sort 
+usage: insertSort.py [-h] [path]
+
+Use insertSort to sort lines of integers in a file.  Results will be stored in
+insert.out.
+
+positional arguments:
+  path        The file with lines of integers to sort. Will default to
+              data.txt if not provided.
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+
+insertSort.py assumes many things:
+    - The data file is specified on the command line when the program is called.  
+        Otherwise it will default to "data.txt".
+    - The data file is in the same directory as insertSort.py, otherwise it will 
+        print a message to the user and exit.
+    - Each line of data the data file contains a string of integers.
+    - The first integer on each line is the quantity of remaining integers on that
+        line, otherwise it will print a message to the user and exit.
+
+
+
+
+Insert Sort Timed Best/Worst
+python insertsortTimedBW.py -h
+usage: insertsortTimedBW.py [-h] [-b [BEST]] [-w [WORST]]
+
+insertsortTimed will create an array of random integers, time how long it
+takes to sort that array and will then print the time out to a file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b [BEST], --best [BEST]
+                        Generate and run the BEST case scenario.
+  -w [WORST], --worst [WORST]
+                        Generate and run the WORST case scenario.
+
+
+
+
+
+Merge Sort
+usage: mergeSort.py [-h] [path]
+
+Use mergeSort to sort lines of integers in a file.  Results will be stored in
+merge.out.
+
+positional arguments:
+  path        The file with lines of integers to sort. Will default to
+              data.txt if not provided.
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+
+mergeSort.py assumes many things:
+    - The data file is specified on the command line when the program is called.  
+        Otherwise it will default to "data.txt".
+    - The data file is in the same directory as mergeSort.py, otherwise it will 
+        print a message to the user and exit.
+    - Each line of data the data file contains a string of integers.
+    - The first integer on each line is the quantity of remaining integers on that
+        line, otherwise it will print a message to the user and exit.
+
+
+
+Merge Sort Timed Best/Worst
+python mergesortTimedBW.py -h
+usage: mergesortTimedBW.py [-h] [-b [BEST]] [-w [WORST]]
+
+mergesortTimed will create an array of random integers, time how long it takes
+to sort that array and will then print the time out to a file.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -b [BEST], --best [BEST]
+                        Generate and run the BEST case scenario.
+  -w [WORST], --worst [WORST]
+                        Generate and run the WORST case scenario.
